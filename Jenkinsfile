@@ -20,5 +20,10 @@ pipeline {
             junit '**/surefire-reports/*.xml'
         }
     }
+    stage ('archvie'){
+        steps{
+            archiveArtifacts artifacts:'**/target/*.jar'
+        }
+    }
     }
 }
